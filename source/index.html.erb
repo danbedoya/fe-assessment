@@ -1,18 +1,5 @@
 <section id="shopify-section-template--17841128014003__a44ffb80-aa2e-461f-b6cf-a7e2beba26a6" class="shopify-section shopify-section--hero">
-  <style>
-    #shopify-section-template--17841128014003__a44ffb80-aa2e-461f-b6cf-a7e2beba26a6 .hero__content-wrapper {
-
-      @media screen and (max-width: 768px),
-      print {
-        align-self: center !important;
-        justify-self: center !important;
-      }
-    }
-
-    #shopify-section-template--17841128014003__a44ffb80-aa2e-461f-b6cf-a7e2beba26a6 .hero__content {}
-  </style>
-
-  <div class="shopify-section__content">
+  <div class="shopify-section__content content-wrapper">
     <%= partial "components/hero" %>
   </div>
 </section>
@@ -54,7 +41,7 @@
   </style>
 
   <div class="shopify-section__content content-wrapper">
-    <%= partial "components/media-with-text" %>
+    <%= partial "components/media-with-text", locals: { loading: "eager" }  %>
   </div>
 </section>
 
@@ -95,6 +82,6 @@
   </style>
 
   <div class="shopify-section__content content-wrapper">
-    <%= partial "components/media-with-text" %>
+    <%= partial "components/media-with-text", locals: { loading: "lazy" } %>
   </div>
 </section>

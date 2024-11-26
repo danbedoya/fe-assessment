@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,19 +7,44 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Syatt Front End Developer Assessment</title>
-    
+
+    <!-- Preload critical images for faster rendering -->
+    <link rel="preload" href="<%= image_path('logo.svg') %>" as="image" type="image/svg+xml">
+
+    <!-- Preload critical Google Fonts to improve LCP (Largest Contentful Paint) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="prefetch" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Preload essential stylesheets to ensure critical CSS is available immediately -->
+    <link rel="preload" href="/stylesheets/settings.css" as="style">
+    <link rel="preload" href="/stylesheets/generic.css" as="style">
+    <link rel="preload" href="/stylesheets/elements.css" as="style">
+    <link rel="preload" href="/stylesheets/objects.css" as="style">
+    <link rel="preload" href="/stylesheets/typography.css" as="style">
+    <link rel="preload" href="/stylesheets/overrides.css" as="style">
+    <link rel="preload" href="/stylesheets/page-header.css" as="style">
+    <link rel="preload" href="/stylesheets/section-buttons.css" as="style">
+
+
+    <!-- Regular stylesheets loaded immediately for all media -->
     <link rel="stylesheet" href="/stylesheets/settings.css" media="all">
     <link rel="stylesheet" href="/stylesheets/generic.css" media="all">
-    <link rel="stylesheet" href="/stylesheets/elements.css" media="all">
-    <link rel="stylesheet" href="/stylesheets/objects.css" media="all">
-    <link rel="stylesheet" href="/stylesheets/typography.css" media="all">
-    <link rel="stylesheet" href="/stylesheets/overrides.css" media="all">
+    <link rel="stylesheet" href="/stylesheets/page-header.css" media="all">
+   
+    
+    <!-- Non-critical stylesheets deferred to avoid blocking render, loaded globally to prevent redundancy -->
+    <link rel="stylesheet" href="/stylesheets/elements.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/objects.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/typography.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/overrides.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/section-text.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/section-buttons.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/drawer.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/text-box.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/button.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/stylesheets/media-with-text.css" media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="/stylesheets/button.css" media="all">
-    <link rel="stylesheet" href="/stylesheets/icon.css" media="all">
-    <link rel="stylesheet" href="/stylesheets/section-buttons.css" media="all">
-    <link rel="stylesheet" href="/stylesheets/section-text.css" media="all">
-    <link rel="stylesheet" href="/stylesheets/text-box.css" media="all">
 
     <script type="importmap">
       {
@@ -29,6 +54,10 @@
         }
       }
     </script>
+
+    <!-- Global JavaScript modules for site-wide functionality -->
+    <script src="/javascripts/drawer.js" type="module"></script>
+
   </head>
   <body>
     <%= partial "components/page-header" %>

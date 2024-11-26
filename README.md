@@ -100,6 +100,39 @@ As mentioned, testing your proficiency in troubleshooting Ruby environments is n
 
 ---
 
+## Troubleshooting Ruby Installation on macOS
+
+If you are using a macOS environment (especially on Apple Silicon Macs), and you're facing Ruby installation issues, one solution you can try is to remove **RVM** or **rbenv** and switch to using **chruby** with **ruby-install**. This method has proven effective for many developers who faced issues with older Ruby versions or installation failures on modern macOS setups.
+
+### Here's the installation process:
+
+1. **Uninstall RVM or rbenv (if they are installed):**
+
+   - For **rbenv**, run:
+     ```bash
+     rm -rf ~/.rbenv
+     ```
+
+   - For **RVM**, run:
+     ```bash
+     rm -rf ~/.rvm
+     ```
+
+2. **Install chruby and ruby-install using Homebrew:**
+   ```bash
+   brew install chruby ruby-install
+
+3. **Install the latest Ruby version:**
+   ```bash
+   ruby-install ruby
+
+4. **Configure your shell:**
+  ```bash
+  echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.zshrc
+  echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" >> ~/.zshrc
+  echo "chruby ruby-3.3.6" >> ~/.zshrc
+  ```
+
 ## When you're done
 
 Once you're comfortable with your changes, submit via email (brit.macintyre@syatt.io), either:

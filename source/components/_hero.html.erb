@@ -1,14 +1,28 @@
 <div class="hero">
-  <link rel="stylesheet" href="/stylesheets/hero.css" media="print" onload="this.media='all'" />
+
+  <link rel="preload" href="/stylesheets/hero.css" as="style">
+  <link rel="stylesheet" href="/stylesheets/hero.css" media="all"/>
+
   
   <div class="hero__media-wrapper hero__media-wrapper--adapt">
-    <img src="https://placehold.co/4000x2000/png?text=Hero+Image" class="hero__media fit-image" />
+  <img  srcset="https://placehold.co/400x225/webp?text=Hero+Image 400w,
+  https://placehold.co/800x450/webp?text=Hero+Image 800w,
+  https://placehold.co/1200x675/webp?text=Hero+Image 1200w,
+  https://placehold.co/1600x900/webp?text=Hero+Image 1600w"
+  src="https://placehold.co/1600x900.jpg?text=Hero+Image"
+  sizes="(max-width: 768px) 80vw, 
+        (max-width: 1024px) 100vw, 
+         1600px"
+  loading="eager"
+  fetchpriority="high"
+  class="hero__media fit-image"
+  alt="Promotional banner" />
   </div>
 
   <div class="hero__content-wrapper hero__content-wrapper--middle-center">
     <div class="hero__content hero__content--middle-center vertical-flow">
       <div class="hero__block hero__block--heading">
-        <div class="section-heading heading-2 no-margin text-center" style="color: inherit">Lorem ipsum dolor sit amet</div>
+        <h1 class="section-heading heading-2 no-margin text-center" style="color: inherit">Lorem ipsum dolor sit amet</h1>
       </div>
 
       <div class="hero__block hero__block--text">
@@ -16,7 +30,6 @@
           <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
-
       <div class="hero__block hero__block--buttons">
         <div class="section-buttons section-buttons--row section-buttons--center">
           <div class="section-buttons__button section-buttons__button--1">

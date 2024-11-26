@@ -1,5 +1,7 @@
 @layer components {
   .primary-nav__menu {
     gap: var(--spacing-unit-m);
+    min-width: 370px;
+    width: 100%;
   }
 }

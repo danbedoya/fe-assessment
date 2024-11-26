@@ -1,7 +1,12 @@
 @layer components {
   .utility-nav__menu {
     align-items: center;
+    min-width: 48px;
+    width: 100%;
     gap: var(--spacing-unit-s); }
+    @media screen and (min-width: 1440px) {
+      .utility-nav__menu {
+        min-width: 88px; } }
   .utility-nav__action {
     display: flex;
     align-items: center;
